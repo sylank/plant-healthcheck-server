@@ -1,0 +1,36 @@
+{{define "hello"}}
+    <h1>Current</h1>
+    <table>
+        <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Soil moisture</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td>{{.Current.Temperature}}</td>
+            <td>{{.Current.Humidity}}</td>
+            <td>{{.Current.SoilMoisture}}</td>
+            <td>{{.Current.DateStr}}</td>
+        </tr>
+    </table>
+
+    <h1>History</h1>
+    <table>
+        <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Soil moisture</th>
+            <th>Date</th>
+        </tr>
+        {{range .History}}
+            <tr>
+                <td>{{.Temperature}}</td>
+                <td>{{.Humidity}}</td>
+                <td>{{.SoilMoisture}}</td>
+                <td>{{.DateStr}}</td>
+            </tr>
+        {{end}}
+    </table>
+{{end}}
+

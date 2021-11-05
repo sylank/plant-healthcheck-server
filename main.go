@@ -63,7 +63,7 @@ func initTcpServer(cType, host, port string, app *Application) {
 		}
 		// Close the listener when the application closes.
 		defer l.Close()
-		fmt.Println("Listening on " + host + ":" + port)
+		fmt.Println("TCP server listening on " + host + ":" + port)
 		for {
 			// Listen for an incoming connection.
 			conn, err := l.Accept()

@@ -1,0 +1,8 @@
+version: "3.2"
+services:
+  plant-healthcheck-server:
+    image: sylank/plant-healthcheck-server:latest
+    ports:
+      - "3333:3333"
+      - "1323:1323"
+    restart: unless-stopped

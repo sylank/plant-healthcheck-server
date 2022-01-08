@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y ca-certificates
 VOLUME /app/public
 ADD public ./public
 COPY --from=0 /app/plant-healthcheck-server/server .
-EXPOSE 3333
-EXPOSE 1323
+EXPOSE 3000
 ENTRYPOINT [ "/app/server" ]
 CMD []

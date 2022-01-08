@@ -27,7 +27,11 @@ func (h *History) Push(element HistoryElement) {
 }
 
 func (h *History) GetElements() []HistoryElement {
-	return h.elements
+	rev := make([]HistoryElement, 0, len(h.elements))
+	for i := len(h.elements) - 1; i != 0; i-- {
+		rev = append(rev, h.elements[i])
+	}
+	return rev
 }
 
 func (h *History) GetLatest() HistoryElement {

@@ -1,7 +1,9 @@
 package model
 
 type SensorData struct {
-	SensorID string
-	Command  int
-	Data     []float32 // 0 - Temperature, 1 - Humidity, 2 - Soil Moisture
+	SensorID     string  `json:"sensor_id"`
+	Command      int     `json:"command"`
+	Temperature  float32 `json:"temperature"`
+	Humidity     float32 `json:"humidity"`
+	SoilMoisture float32 `json:"soil_moisture"`
 }

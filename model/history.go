@@ -28,8 +28,9 @@ func (h *History) Push(element HistoryElement) {
 
 func (h *History) GetElements() []HistoryElement {
 	rev := make([]HistoryElement, 0, len(h.elements))
-	for i := len(h.elements) - 1; i != 0; i-- {
-		rev = append(rev, h.elements[i])
+
+	for i := len(h.elements); i != 0; i-- {
+		rev = append(rev, h.elements[i-1])
 	}
 	return rev
 }
